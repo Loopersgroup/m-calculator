@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    $(function() {
+        var input = $('input');
+        var equals = $('[name="equals"]');
+
+        $('.num-button').on('click', function () {
+            input.val(input.val() + $(this).attr('name'));
+        });
+    });
+    $('.operation').on('click', function() {
+        var opName = $(this).attr('name');
+        if (opName == 'subtract' && input.val().length == 0) {
+            input.val('-');
+        } else {
+            input.attr('name', input.val());
+            input.val('');
+            equals.removeClass();
+            equals.addClass(opName);
+        }
+    });
+
+</script>
+
+</head>
+<body>
+<section>
+    <h1>Calculator</h1>
+    <table>
+        <input>
+        <tr>
+            <td><button name="1" class="num-button">1</button></td>
+            <td><button name="2" class="num-button">2</button></td>
+            <td><button name="3" class="num-button">3</button></td>
+            <td><button name="add" class="operation">+</button></td>
+        </tr>
+        <tr>
+            <td><button name="4" class="num-button">4</button></td>
+            <td><button name="5" class="num-button">5</button></td>
+            <td><button name="6" class="num-button">6</button></td>
+            <td><button name="subtract" class="operation">-</button></td>
+        </tr>
+        <tr>
+            <td><button name="7" class="num-button">7</button></td>
+            <td><button name="8" class="num-button">8</button></td>
+            <td><button name="9" class="num-button">9</button></td>
+            <td><button name="multiply" class="operation">x</button></td>
+        </tr>
+        <tr>
+            <td><button name="0" class="num-button">0</button></td>
+            <td><button name="." class="num-button">.</button></td>
+            <td><button name="equals">=</button></td>
+            <td><button name="divide" class="operation">/</button></td>
+        </tr>
+    </table>
+    <button class="clear">Clear</button>
+</section>
+
+<script src="js/vendor/jquery-1.10.2.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
