@@ -20,51 +20,122 @@
 
                 });
                 $("#add").click(function () {
-                    answer = parseFloat($("#ans").val());
-                    ops = '+';
-                    $('#ans').val('');
+                    if(ops=='+') {
+                        answer=(parseFloat($("#ans").val()) + parseFloat(answer));
+                    }
+                    else if(ops=='-')
+                    {
+                        answer=(parseFloat(parseFloat(answer)-$("#ans").val()));
+                    }
+                    else if(ops=='*')
+                    {
+                        answer=(parseFloat($("#ans").val()) * parseFloat(answer));
+                    }
+                    else if(ops=='/')
+                    {
+                        answer=(parseFloat(parseFloat(answer))/$("#ans").val());
+                    }
 
+                    else {
+                        answer = parseFloat($("#ans").val());
+                        ops = '+';
+                    }
+                    $('#ans').val('');
 
                 });
             $("#subtract").click(function () {
-                answer = parseFloat($("#ans").val());
-                ops = '-';
+                if(ops=='+') {
+                    answer=(parseFloat($("#ans").val()) + parseFloat(answer));
+                }
+                else if(ops=='-')
+                {
+                    answer=(parseFloat(parseFloat(answer)-$("#ans").val()));
+                }
+                else if(ops=='*')
+                {
+                    answer=(parseFloat($("#ans").val()) * parseFloat(answer));
+                }
+                else if(ops=='/')
+                {
+                    answer=(parseFloat(parseFloat(answer))/$("#ans").val());
+                }
+            else {
+                    answer = parseFloat($("#ans").val());
+                    ops = '-';
+
+                }
                 $('#ans').val('');
-
-
             });
             $("#multiply").click(function () {
-                answer = parseFloat($("#ans").val());
-                ops = '*';
-                $('#ans').val('');
+                if(ops=='+') {
+                    answer=(parseFloat($("#ans").val()) + parseFloat(answer));
+                }
+                else if(ops=='-')
+                {
+                    answer=(parseFloat(parseFloat(answer)-$("#ans").val()));
+                }
+                else if(ops=='*')
+                {
+                    answer=(parseFloat($("#ans").val()) * parseFloat(answer));
+                }
+                else if(ops=='/')
+                {
+                    answer=(parseFloat(parseFloat(answer))/$("#ans").val());
+                }
+                else {
+                    answer = parseFloat($("#ans").val());
+                    ops = '*';
 
+                }
+                $('#ans').val('');
 
             });
             $("#divide").click(function () {
-                answer = parseFloat($("#ans").val());
-                ops = '/';
+                if(ops=='+') {
+                    answer=(parseFloat($("#ans").val()) + parseFloat(answer));
+                }
+                else if(ops=='-')
+                {
+                    answer=(parseFloat(parseFloat(answer)-$("#ans").val()));
+                }
+                else if(ops=='*')
+                {
+                    answer=(parseFloat($("#ans").val()) * parseFloat(answer));
+                }
+                else if(ops=='/')
+                {
+                    answer=(parseFloat(parseFloat(answer))/$("#ans").val());
+                }
+                else {
+                    answer = parseFloat($("#ans").val());
+                    ops = '/';
+
+
+                }
                 $('#ans').val('');
-
-
             });
 
                 $('#equals').click(function () {
                     if (ops == '+') {
 
                         $('#ans').val(parseFloat($("#ans").val()) + parseFloat(answer));
+                        ops='';
                     }
 
                     if (ops == '-') {
 
                         $('#ans').val(parseFloat(answer)-parseFloat($("#ans").val()));
+                        ops='';
                     }
                     if (ops == '/') {
 
                         $('#ans').val(parseFloat(answer)/parseFloat($("#ans").val()));
+                        ops='';
                     }
                     if (ops == '*') {
 
                         $('#ans').val(parseFloat($("#ans").val()) * parseFloat(answer));
+                        ops='';
                     }
 
                 });
