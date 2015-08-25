@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title></title>
+    <script>
+        $(document).ready(function() {
+            var answer = '0';
+            var ops = '';
+            $(".num-button").click(function () {
+                var v = $(this).val();
+               $("#ans").val($("#ans").val() + v);
+
+
+          });
+
+                $("#clear").click(function(){
+                    $("#ans").val('');
+
+                });
+                $("#add").click(function () {
+                    answer = parseFloat($("#ans").val());
+                    ops = '+';
+                    $('#ans').val('');
+
+
+                });
+            $("#subtract").click(function () {
+                answer = parseFloat($("#ans").val());
+                ops = '-';
+                $('#ans').val('');
+
+
+            });
+            $("#multiply").click(function () {
+                answer = parseFloat($("#ans").val());
+                ops = '*';
+                $('#ans').val('');
+
+
+            });
+            $("#divide").click(function () {
+                answer = parseFloat($("#ans").val());
+                ops = '/';
+                $('#ans').val('');
+
+
+            });
+
+                $('#equals').click(function () {
+                    if (ops == '+') {
+
+                        $('#ans').val(parseFloat($("#ans").val()) + parseFloat(answer));
+                    }
+
+                    if (ops == '-') {
+
+                        $('#ans').val(parseFloat(answer)-parseFloat($("#ans").val()));
+                    }
+                    if (ops == '/') {
+
+                        $('#ans').val(parseFloat(answer)/parseFloat($("#ans").val()));
+                    }
+                    if (ops == '*') {
+
+                        $('#ans').val(parseFloat($("#ans").val()) * parseFloat(answer));
+                    }
+
+                });
+
+
+        });
+    </script>
+</head>
+<body>
+<div>
+    <h1>Calculator</h1>
+    <table>
+        <input id="ans" value="" disabled="disabled">
+        <tr>
+            <td><button id="1" class="num-button" value="1">1</button></td>
+            <td><button id="2" class="num-button" value="2">2</button></td>
+            <td><button id="3" class="num-button" value="3">3</button></td>
+            <td><button id="add" class="operation">+</button></td>
+        </tr>
+        <tr>
+            <td><button id="4" class="num-button" value="4">4</button></td>
+            <td><button id="5" class="num-button" value="5">5</button></td>
+            <td><button id="6" class="num-button" value="6">6</button></td>
+            <td><button id="subtract" class="operation" >-</button></td>
+        </tr>
+        <tr>
+            <td><button id="7" class="num-button" value="7">7</button></td>
+            <td><button id="8" class="num-button" value="8">8</button></td>
+            <td><button id="9" class="num-button" value="9">9</button></td>
+            <td><button id="multiply" class="operation" >x</button></td>
+        </tr>
+        <tr>
+            <td><button id="0" class="num-button" value="0">0</button></td>
+            <td><button id="." class="num-button">.</button></td>
+            <td><button id="equals">=</button></td>
+            <td><button id="divide" class="operation">/</button></td>
+        </tr>
+    </table>
+    <button id="clear">Clear</button>
+
+
+</div>
+</body>
+</html>
